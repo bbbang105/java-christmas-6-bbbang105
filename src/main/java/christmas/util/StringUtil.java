@@ -32,6 +32,13 @@ public class StringUtil {
         return formatter.format(number);
     }
 
+    public List<String> getAppetizerMenuNames() {
+        return Arrays.stream(Menu.values())
+                .filter(menu -> menu.getCategory() == Menu.Category.애피타이저)
+                .map(Menu::getName)
+                .collect(Collectors.toList());
+    }
+
     public List<String> getDesertMenuNames() {
         return Arrays.stream(Menu.values())
                 .filter(menu -> menu.getCategory() == Menu.Category.디저트)
